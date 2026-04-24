@@ -1465,6 +1465,9 @@ void TargetPassConfig::addFastRegAlloc() {
   addPass(&PHIEliminationID);
   addPass(&TwoAddressInstructionPassID);
 
+  // Dump interference graphs in DIMACS format (enabled via -enable-dump-ig).
+  addPass(&DumpInterferenceGraphID);
+
   addRegAssignAndRewriteFast();
 }
 
@@ -1509,6 +1512,9 @@ void TargetPassConfig::addOptimizedRegAlloc() {
 
   // PreRA instruction scheduling.
   addPass(&MachineSchedulerID);
+
+  // Dump interference graphs in DIMACS format (enabled via -enable-dump-ig).
+  addPass(&DumpInterferenceGraphID);
 
   if (addRegAssignAndRewriteOptimized()) {
     // Perform stack slot coloring and post-ra machine LICM.

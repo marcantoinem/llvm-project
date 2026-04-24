@@ -36,6 +36,7 @@ void llvm::initializeCodeGen(PassRegistry &Registry) {
   initializeDeadMachineInstructionElimPass(Registry);
   initializeDebugifyMachineModulePass(Registry);
   initializeDetectDeadLanesLegacyPass(Registry);
+  initializeDumpInterferenceGraphLegacyPass(Registry);
   initializeDummyCGSCCPassPass(Registry);
   initializeDwarfEHPrepareLegacyPassPass(Registry);
   initializeEHContGuardTargetsPass(Registry);

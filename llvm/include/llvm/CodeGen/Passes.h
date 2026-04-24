@@ -218,6 +218,9 @@ LLVM_ABI extern char &DeadMachineInstructionElimID;
 /// This pass adds dead/undef flags after analyzing subregister lanes.
 LLVM_ABI extern char &DetectDeadLanesID;
 
+/// DumpInterferenceGraph - Dumps register interference graphs in DIMACS format.
+LLVM_ABI extern char &DumpInterferenceGraphID;
+
 /// This pass perform post-ra machine sink for COPY instructions.
 LLVM_ABI extern char &PostRAMachineSinkingID;
 
